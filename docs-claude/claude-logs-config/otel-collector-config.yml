@@ -1,0 +1,70 @@
+##############################################################
+# OpenTelemetry Collector Configuration
+# Receives OTLP from Claude Code and exports to Elasticsearch
+##############################################################
+
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+    timeout: 5s
+    send_batch_size: 512
+    send_batch_max_size: 1024
+
+  resource:
+    attributes:
+      - action: upsert
+        key: service.name
+        value: claude-code
+
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 400
+    spike_limit_mib: 100
+
+exporters:
+  # ── Elasticsearch log exporter ──────────────────────────
+  elasticsearch:
+    endpoints:
+      - http://elasticsearch:9200
+    logs_index: claude-code-logs
+    mapping:
+      mode: ecs
+    retry:
+      enabled: true
+      initial_interval: 100ms
+      max_interval: 30s
+    timeout: 30s
+
+  # ── Debug exporter (stdout) — useful during initial setup ─
+  debug:
+    verbosity: normal
+
+service:
+  extensions: [health_check]
+
+  pipelines:
+    logs:
+      receivers:  [otlp]
+      processors: [memory_limiter, resource, batch]
+      exporters:  [elasticsearch, debug]
+
+    # Traces pipeline — debug only (extend as needed)
+    traces:
+      receivers:  [otlp]
+      processors: [memory_limiter, batch]
+      exporters:  [debug]
+
+  telemetry:
+    logs:
+      level: info

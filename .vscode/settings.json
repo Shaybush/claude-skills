@@ -1,0 +1,342 @@
+{
+	"workbench.colorTheme": "Default Dark Modern", // "Light"
+
+	"github.copilot.nextEditSuggestions.enabled": true, // <--- change to false in job-interviews
+	"github.copilot.enable": {
+		"*": true, // <--- change to false in job-interviews
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
+
+	// -----------
+	// Font Sizes:
+	// -----------
+	"editor.fontSize": 16,
+	"debug.console.fontSize": 12,
+	"terminal.integrated.fontSize": 12,
+	"editor.suggestFontSize": 14, // <--- suggestions popover
+	"gitlens.currentLine.fontSize": 15, // <--- git blame
+	"editor.inlayHints.fontSize": 46,
+	"gitlens.blame.fontSize": 46,
+	"markdown.preview.fontSize": 46,
+	"editor.codeLensFontSize": 16, // <--- conflict resolution: "Accept Current" | "No Changes Accepted" | "Remove Stashed Changes" | "Remove Incoming Changes"
+	"chat.fontSize": 16,
+
+	// -------------------
+	// Basic Editor Rules:
+	// -------------------
+	"window.title": "${folderName}", // <--- "${dirty}${folderName}${separator}${activeFolderShort}\\${activeEditorShort}${separator}${activeEditorMedium}"
+	"window.zoomLevel": 1,
+	"window.zoomPerWindow": true, // <--- defaults to true. It used to be false before version 1.86.
+	"editor.formatOnSave": true,
+	"workbench.tree.stickyScrollMaxItemCount": 7, // <--- defaults to 7. It used to be 1 before version 1.86.
+	"workbench.activityBar.orientation": "vertical",
+	"workbench.activityBar.iconClickBehavior": "focus",
+	"workbench.editor.editorActionsLocation": "default",
+	"explorer.compactFolders": false,
+	// "workbench.list.horizontalScrolling": true,
+	// "search.mode": "newEditor",
+	"explorer.autoReveal": true,
+	"explorer.autoRevealExclude": {
+		"**/node_modules": false, // <--- Finally!!! I've been looking for this! opens/reveals files in node_modules in explorer tree view.
+		"**/bower_components": false
+	},
+	"search.exclude": {
+		// The default ones:
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/*.code-search": true
+	},
+	"files.associations": {
+		"*.json": "jsonc",
+		"*.svg": "html",
+		"*.code-snippets": "jsonc"
+	},
+	"editor.colorDecorators": true, // <--- Controls whether the editor should render the inline color decorators and color picker.
+	"editor.dragAndDrop": false, // <--- defaults to "true". Decides if drag and drop of code lines is allowed/possible. I always hated this feature.
+	"editor.gotoLocation.multipleDefinitions": "goto", // <--- I FOUND IT!!!! No more peeking !!! default value was peek
+	"editor.gotoLocation.multipleReferences": "peek", // <--- I FOUND IT!!!! When a reference was mis-spelled, it couldn't perform the goto operation, so it gets stuck in the same place.
+	// "files.autoSave": "off", // Defaults to false. Possible options: off | onFocusChange | afterDelay | onWindowChange
+	// "files.autoSaveDelay": 1000,
+	// "files.refactoring.autoSave": true,
+	// "editor.autoSurround": "languageDefined", // defaults to "languageDefined". Defines what to do when text is selected, and you hit ' or [.
+	// "editor.minimap.enabled": true, // <--- defaults to "true". The 'minimap' is the mini-code on the right, which you can use to navigate a really long file.
+	// "editor.mouseWheelZoom": false, // <--- default to "false".
+	// "editor.multiCursorModifier": "alt", // <--- defaults to "alt".
+	// "editor.showUnused": true, // <--- defaults to "true". true value marks unreachable code as faded out.
+	// "editor.wordWrap": "off", // <--- defaults to "off".
+	// "diffEditor.codeLens": false, // <--- defaults to "false"
+	// "diffEditor.renderSideBySide": true, // <--- defaults to "true"
+	// "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.goToImplementation",
+	// "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToImplementation",
+	// "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToImplementation",
+	// "editor.gotoLocation.alternativeReferenceCommand": "editor.action.goToImplementation",
+	// "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToImplementation",
+	// "editor.gotoLocation.multipleDeclarations": "goto",
+	// "editor.gotoLocation.multipleImplementations": "goto",
+	// "editor.gotoLocation.multipleTypeDefinitions": ,
+
+	// ---------------
+	// Zen Mode Rules:
+	// ---------------
+	"zenMode.centerLayout": false,
+	"zenMode.fullScreen": true,
+	"zenMode.restore": true,
+	"zenMode.showTabs": "none",
+	"zenMode.hideStatusBar": true,
+	"zenMode.hideActivityBar": true,
+	"zenMode.hideLineNumbers": false,
+	"zenMode.silentNotifications": true,
+	// "editor.minimap.autohide": true,
+
+	// ------------------------------
+	// Javascript & Typescript Rules:
+	// ------------------------------
+	"javascript.preferences.importModuleSpecifier": "relative", // <--- defaults to "shortest"
+	"javascript.preferences.importModuleSpecifierEnding": "auto", // <--- defaults to "auto"
+	"javascript.updateImportsOnFileMove.enabled": "always", // <--- defaults to "prompt"
+	"js/ts.implicitProjectConfig.checkJs": true, // <--- defaults to "false". Either this property, or `checkJs` property within your jsconfig must be set to true for type-checkingto work inside js files.
+
+	"typescript.preferences.importModuleSpecifier": "relative", // <--- defaults to "shortest"
+	"typescript.preferences.importModuleSpecifierEnding": "auto", // <--- defaults to "auto"
+	"typescript.updateImportsOnFileMove.enabled": "always", // <--- defaults to "prompt"
+
+	// "typescript.validate.enable": true,
+	// "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+
+	// ----------------
+	// Work Tree Rules:
+	// ----------------
+	"workbench.tree.indent": 14,
+	"workbench.tree.renderIndentGuides": "always",
+
+	// ------------------------------
+	// IDE Color Customization Rules:
+	// ------------------------------
+	"workbench.colorCustomizations": {
+		"[Default Dark Modern]": {
+			"activityBar.foreground": "#4a90d9",
+			"activityBar.inactiveForeground": "#4b5563",
+			"activityBar.dropBorder": "#4a90d9",
+			"activityBar.border": "#1a1a1a",
+			"activityBar.activeBorder": "#4a90d9",
+			"activityBar.activeBackground": "#ffffff0a",
+			"activityBar.background": "#0a0a0a",
+			"activityBarBadge.background": "#083763",
+			"activityBarBadge.foreground": "#ffffff",
+
+			"sideBar.border": "#1a1a1a",
+			"sideBar.background": "#0a0a0a",
+			"sideBar.foreground": "#9ca3af",
+			"sideBarTitle.foreground": "#d1d5db",
+			"sideBarSectionHeader.background": "#0a0a0a",
+			"sideBarSectionHeader.foreground": "#d1d5db",
+
+			"tab.activeBackground": "#111111",
+			"tab.inactiveBackground": "#0a0a0a",
+			"tab.inactiveForeground": "#6b7280",
+			"tab.activeForeground": "#e5e7eb",
+			"tab.hoverBackground": "#1a1a1a",
+			"tab.border": "#0a0a0a",
+
+			"dropdown.border": "#1a2d42",
+			"dropdown.foreground": "#d1d5db",
+			"dropdown.background": "#111111",
+
+			"editor.background": "#111111",
+			"editor.foreground": "#e5e7eb",
+			"editorLineNumber.activeForeground": "#4a90d9",
+			"editorLineNumber.foreground": "#374151",
+			"editorCursor.foreground": "#4a90d9",
+			"editor.selectionBackground": "#1a2d4266",
+			"editorMultiCursor.primary.foreground": "#e5e7eb",
+			"editorMultiCursor.secondary.foreground": "#6b7280",
+
+			"editorUnnecessaryCode.opacity": "#ffffff88",
+
+			"diffEditor.insertedTextBackground": "#10b98130",
+			"diffEditor.removedTextBackground": "#ef444430",
+			"diffEditor.insertedLineBackground": "#10b98118",
+			"diffEditor.removedLineBackground": "#ef444418",
+
+			"inputOption.activeBackground": "#1a2d4288",
+			"inputOption.activeBorder": "#4a90d9",
+			"input.background": "#0a0a0a",
+			"input.border": "#1a2d42",
+			"input.foreground": "#e5e7eb",
+
+			"list.focusHighlightForeground": "#e5e7eb",
+			"list.highlightForeground": "#4a90d9",
+			"list.activeSelectionBackground": "#1a2d42",
+			"list.activeSelectionForeground": "#e5e7eb",
+			"list.hoverBackground": "#1a1a1a",
+
+			"search.resultsInfoForeground": "#4a90d9",
+
+			"toolbar.activeBackground": "#1a2d42",
+			"toolbar.hoverBackground": "#1a1a1a",
+
+			"tree.indentGuidesStroke": "#1a2d42",
+
+			"widget.shadow": "#4a90d9",
+			"widget.border": "#1a1a1a",
+
+			"focusBorder": "#4a90d966",
+			"foreground": "#e5e7eb",
+			"textLink.foreground": "#4a90d9",
+			"titleBar.activeBackground": "#0a0a0a",
+			"titleBar.activeForeground": "#9ca3af",
+			"titleBar.border": "#1a1a1a",
+			"titleBar.inactiveBackground": "#0a0a0a",
+			"statusBar.background": "#083763",
+			"statusBar.foreground": "#ffffff",
+			"statusBar.border": "#062d52",
+			"panel.border": "#1a1a1a",
+			"panel.background": "#0a0a0a",
+			"terminal.foreground": "#e5e7eb",
+			"terminal.ansiBlue": "#4a90d9",
+			"terminal.ansiBrightBlue": "#CFE1F3",
+			"terminal.ansiCyan": "#3b82f6",
+			"terminal.ansiBrightCyan": "#dbeafe",
+			"scrollbarSlider.background": "#37415133",
+			"scrollbarSlider.hoverBackground": "#37415155",
+			"scrollbarSlider.activeBackground": "#37415177",
+			"badge.background": "#083763",
+			"badge.foreground": "#ffffff",
+			"button.background": "#083763",
+			"button.foreground": "#ffffff",
+			"button.hoverBackground": "#0a4578",
+			"editorWidget.background": "#0a0a0a",
+			"editorWidget.border": "#1a1a1a",
+			"editorGroupHeader.tabsBackground": "#0a0a0a",
+			"editorGroupHeader.tabsBorder": "#1a1a1a",
+			"breadcrumb.foreground": "#6b7280",
+			"breadcrumb.focusForeground": "#e5e7eb",
+			"breadcrumb.activeSelectionForeground": "#4a90d9"
+		},
+		"editorGutter.modifiedBackground": "#00000000",
+		"editorGutter.addedBackground": "#00000000",
+		"editorGutter.deletedBackground": "#00000000",
+		"editorGutter.foldingControlForeground": "#083763",
+		"editorGutter.itemGlyphForeground": "#4a90d9",
+		"editorGutter.itemBackground": "#1a2d4288"
+	},
+
+	// --------------------------
+	// Code actions onSave Rules:
+	// --------------------------
+	// - Mostly for formatting using a formatter (eslint & prettier)
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit"
+		// "source.fixAll": true, // <--- This is stronger than source.fixAll.eslint! because it also aggresively removes unreachable code!
+		// "source.organizeImports": true, // <--- This also removes unused imports. I disabled it, since I'm already using eslint for that.
+		// "source.organizeImports.biome": "always",
+	},
+
+	// ----------
+	// Git Rules:
+	// ----------
+	"git.closeDiffOnOperation": false, // <--- defaults to "true". Basically? This is relevant for when you hit the plus sign to stage changes. Do you want VsCode to close the DiffEditor afterwards? or not? I do not.
+	"git.showCommitInput": true, // <--- defaults to "true". I'm not using it to commit, so I hide it.
+	"git.showActionButton": { "commit": true, "publish": true, "sync": true },
+	"git.alwaysShowStagedChangesResourceGroup": true, // <--- defaults to "false". Always show the "Staged Changes" tab, even if there are 0 changes staged.
+	// "git.showInlineOpenFileAction": false, // <--- defaults to "true". When examining changes, there's an "open file" icon near the revert changes icon. I use it, so I keep it visible.
+	// "git.untrackedChanges": "separate", // <--- defaults to "mixed".
+	// "git.openDiffOnClick": false, // <--- defaults to "true".
+	"files.exclude": { "**/.git": false },
+
+	// --------------
+	// GitLens Rules:
+	// --------------
+	"gitlens.codeLens.enabled": false, // <--- finallyyy!!! I wanted to disable this for soooo longggg!
+	"gitlens.views.scm.grouped.views": {
+		// All of these will appear:
+		"branches": false,
+		"stashes": false,
+		// All of these will NOT appear:
+		"commits": true,
+		"remotes": true,
+		"repositories": true
+	},
+	// "gitlens.advanced.blame.delayAfterEdit": 5000,
+	// "gitlens.outputLevel": "warn",
+	// "gitlens.currentLine.enabled": false,
+	// "gitlens.currentLine.format": "${author, }${agoOrDate}${' via 'pullRequest}${ • message|50?}",
+
+	// ---------------
+	// Terminal Rules:
+	// ---------------
+	"terminal.integrated.smoothScrolling": true, // <--- defaults to "false".
+	"terminal.integrated.copyOnSelection": true, // <--- defaults to "false".
+	"terminal.integrated.rightClickBehavior": "copyPaste", // <--- defaults to "selectWord".
+	"terminal.integrated.cursorStyle": "line", // <--- defaults to "block".
+	"terminal.integrated.cursorWidth": 2, // <--- defaults to "1".
+	"terminal.integrated.enablePersistentSessions": false, // defaults to "true".
+	"terminal.integrated.persistentSessionReviveProcess": "never", // defaults to "onExit".
+	"terminal.integrated.mouseWheelZoom": false, // <--- default to false.
+	// "terminal.integrated.cursorBlinking": false, // <--- defaults to "false".
+	// "terminal.integrated.wordSeparators": " ()[]{}',\"`─‘’|", // defaults to  ()[]{}',\"`─‘’|
+	// "terminal.integrated.scrollback": 1000, // <--- defaults to 1000 lines backwards
+	// "terminal.integrated.defaultLocation": "view", // <--- defaults to "view".
+	// "terminal.integrated.altClickMovesCursor": true, // <--- defaults to "true". Write a long word (i.e. multiCursorModifiermultiCursorModifier), and now alt+click a position within that word. watch what happens to the cursor.
+
+	// ------------
+	// Debug Rules:
+	// ------------
+	"debug.console.acceptSuggestionOnEnter": "on", // finally!!! This drove me mad!!! defaults to off.
+	"debug.closeReadonlyTabsOnEnd": true, // <--- defaults to false. When attached to a debugger, there can be internal or virtual source files that don't exist on-disk, which are opened as readonly. This new setting causes VS Code to automatically close any opened readonly files from the debug session when the session ends.
+
+	// -----------
+	// JSON Rules:
+	// -----------
+	"[jsonc]": {
+		"editor.quickSuggestions": { "strings": "on" },
+		"editor.suggest.insertMode": "replace", // defaults to insert
+		"editor.defaultFormatter": "esbenp.prettier-vscode" // biomejs.biome or esbenp.prettier-vscode
+	},
+
+	// ---------------
+	// Markdown Rules:
+	// ---------------
+	"[markdown]": {
+		"editor.wordWrap": "on",
+		"editor.renderWhitespace": "all",
+		"editor.acceptSuggestionOnEnter": "off",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// -----------
+	// HTML Rules:
+	// -----------
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// -------------
+	// Eslint Rules:
+	// -------------
+	// "prettier.configPath": ".prettierrc.js",
+	// Enable eslint for all supported languages
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"json"
+		// "html", // <--- commented out because svg files are treated as html and eslint can't handle that.
+		// "jsonc" // <--- commented out because it errored the eslintrc config file
+		// "yaml" // <--- works badly on yamls
+		// "markdown" // <--- works badly on markdowns
+	],
+
+	// ----------
+	// CSS Rules:
+	// ----------
+	"css.lint.unknownProperties": "ignore",
+	"css.lint.unknownAtRules": "ignore"
+	// "[css]": {
+	//   "editor.defaultFormatter": "aeschli.vscode-css-formatter" // <--- i'm using prettier formatter instead of this, but also does an ok job.
+	// },
+}
